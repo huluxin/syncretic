@@ -1,0 +1,11 @@
+/.settings/
+/.project
+/syncretic-core/.settings/
+/syncretic-core/.classpath
+/syncretic-core/.gitignore
+/syncretic-core/.project
+
+/syncretic-utils/.settings/
+/syncretic-utils/.classpath
+/syncretic-utils/.gitignore
+/syncretic-utils/.project
