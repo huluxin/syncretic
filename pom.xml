@@ -413,5 +413,6 @@
 	</distributionManagement>
 	<modules>
 		<module>syncretic-utils</module>
+		<module>syncretic-core</module>
 	</modules>
 </project>
