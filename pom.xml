@@ -411,4 +411,7 @@
 			<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+	<modules>
+		<module>syncretic-utils</module>
+	</modules>
 </project>
