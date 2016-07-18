@@ -16,9 +16,11 @@ import org.apache.ibatis.session.RowBounds;
 import java.util.*;
 
 /**
- * MyBatis Map类型大写下划线Key转小写驼峰形式
+ * 
+ * @description MyBatis Map类型大写下划线Key转小写驼峰形式
  *
- * @since 1.0.0
+ * @author xuyq - chainisit@126.com
+ * @since 1.0 - 2016年7月18日
  */
 @Intercepts(@Signature(type = Executor.class, method = "query",
     args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}))

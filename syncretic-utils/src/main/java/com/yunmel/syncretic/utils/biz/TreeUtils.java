@@ -26,7 +26,6 @@ import com.yunmel.syncretic.utils.commons.CollectionsUtils;
 @SuppressWarnings({"unchecked"})
 public class TreeUtils {
 
-
   /**
    * 转换成List形式树结构 (如果是缓存的list，请务必深度copy一个)
    * 
@@ -34,22 +33,17 @@ public class TreeUtils {
    * @return
    */
   public static <T extends BaseEntity> List<T> toTreeNodeList(List<T> source, Class<T> bean) {
-
     final Map<String, T> nodes = Maps.newHashMap();
-
     ConvertUtils.register(new Converter() {
-
+      @SuppressWarnings("hiding")
       @Override
       public <T> T convert(Class<T> arg0, Object arg1) {
         // TODO Auto-generated method stub
         return null;
       }
     }, java.util.Date.class);
-
-
     // 深度copy一个，防止源list内部结构改变
     List<T> list = CollectionsUtils.copyTo(source, bean);
-
     // 所有节点记录下来
     for (T node : list) {
       node.put("level", -1);

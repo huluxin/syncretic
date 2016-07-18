@@ -22,6 +22,13 @@ import tk.mybatis.mapper.mapperhelper.EntityHelper;
 import tk.mybatis.mapper.mapperhelper.MapperHelper;
 import tk.mybatis.mapper.mapperhelper.MapperTemplate;
 
+/**
+ * 
+ * @description BaseMapperProvider
+ *
+ * @author xuyq - chainisit@126.com
+ * @since 1.0 - 2016年7月18日
+ */
 public class BaseMapperProvider extends MapperTemplate {
 
   public BaseMapperProvider(Class<?> mapperClass, MapperHelper mapperHelper) {

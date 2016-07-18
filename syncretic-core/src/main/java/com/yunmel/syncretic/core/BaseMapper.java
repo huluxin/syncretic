@@ -12,10 +12,11 @@ import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
 
 /**
- * 自定义mapepr
  * 
- * @author xuyq
+ * @description 自定义mapper
  *
+ * @author xuyq - chainisit@126.com
+ * @since 1.0 - 2016年7月18日
  * @param <T>
  */
 public interface BaseMapper<T> extends Mapper<T>, MySqlMapper<T> {

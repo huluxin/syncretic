@@ -11,10 +11,17 @@ import java.util.Map;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
+/**
+ * 
+ * @description 树形节点
+ *
+ * @author xuyq - chainisit@126.com
+ * @since 1.0 - 2016年7月18日
+ */
 public class TreeNode {
 
-  private Long id;
-  private Long parentId; // 父级id
+  private String id;
+  private String parentId; // 父级id
   private String name; // 名称
   private String url; // 链接
   private String icon; // 图标
@@ -27,7 +34,7 @@ public class TreeNode {
 
   public TreeNode() {}
 
-  public TreeNode(Long id, Long parentId, String name, String url, String icon) {
+  public TreeNode(String id, String parentId, String name, String url, String icon) {
     super();
     this.id = id;
     this.parentId = parentId;
@@ -36,19 +43,19 @@ public class TreeNode {
     this.icon = icon;
   }
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public Long getParentId() {
+  public String getParentId() {
     return parentId;
   }
 
-  public void setParentId(Long parentId) {
+  public void setParentId(String parentId) {
     this.parentId = parentId;
   }
 
@@ -122,7 +129,7 @@ public class TreeNode {
   }
 
   // 递归找level
-  private static int resolveLevel(final TreeNode node, final Map<Long, TreeNode> nodes) {
+  private static int resolveLevel(final TreeNode node, final Map<String, TreeNode> nodes) {
     int level = node.level;
     if (level == -2) {
       throw new RuntimeException("Node循环了, id=" + node.id);
@@ -144,7 +151,7 @@ public class TreeNode {
    * @throws Exception parentNode is null
    */
   public static List<TreeNode> baseTreeNode(List<TreeNode> list) {
-    final Map<Long, TreeNode> nodes = Maps.newHashMap();
+    final Map<String, TreeNode> nodes = Maps.newHashMap();
 
     // 所有节点记录下来
     for (TreeNode node : list) {
@@ -153,7 +160,7 @@ public class TreeNode {
 
     final TreeNode root = new TreeNode();
     root.level = 0;
-    nodes.put(0L, root);
+    nodes.put("0", root);
 
     for (TreeNode node : list) {
       final TreeNode parent = nodes.get(node.parentId);

@@ -99,6 +99,14 @@ public class StrUtils extends StringUtils {
     return new String(buffer);
   }
 
+  /**
+   * 截取字符串
+   * @param src 源字符串
+   * @param offset 开始位置
+   * @param len 长度
+   * @return 字符数组
+   *      char[]
+   */
   public static char[] subarray(char[] src, int offset, int len) {
     char[] dest = new char[len];
     System.arraycopy(src, offset, dest, 0, len);
@@ -108,7 +116,11 @@ public class StrUtils extends StringUtils {
   public static boolean isLowercaseAlpha(char c) {
     return (c >= 'a') && (c <= 'z');
   }
-
+  /**
+   * 转换为大写字母
+   * @param c 源字母
+   * @return char
+   */
   public static char toUpperAscii(char c) {
     if (isLowercaseAlpha(c)) {
       c -= (char) 0x20;
@@ -116,6 +128,11 @@ public class StrUtils extends StringUtils {
     return c;
   }
 
+  /**
+   * 转换为小写字母
+   * @param c
+   * @return
+   */
   public static char toLowerAscii(char c) {
     if ((c >= 'A') && (c <= 'Z')) {
       c += (char) 0x20;
@@ -123,10 +140,11 @@ public class StrUtils extends StringUtils {
     return c;
   }
 
-  public static String firstCharToUpperCase(String s) {
-    return s.substring(0, 1).toUpperCase() + s.substring(1);
-  }
-
+  /**
+   * 类型转换
+   * @param s
+   * @return
+   */
   public static String typeCovert(String s) {
     s = s.toLowerCase();
     if ("string".equals(s)) {
@@ -155,16 +173,43 @@ public class StrUtils extends StringUtils {
     return null;
   }
 
+  /**
+   * 首字母大写
+   * @param str
+   * @return
+   */
   public static String firstCharToUpper(String str) {
     StringBuffer sb = new StringBuffer(str);
     sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
     return sb.toString();
   }
 
+  /**
+   * 首字母小写
+   * @param str
+   * @return
+   */
   public static String firstCharToLower(String str) {
     StringBuffer sb = new StringBuffer(str);
     sb.setCharAt(0, Character.toLowerCase(sb.charAt(0)));
     return sb.toString();
   }
+  
+  /**
+   * 首字母大写
+   * @param s 源字符串
+   * @return
+   */
+  public static String firstCharToUpperCase(String s) {
+    return s.substring(0, 1).toUpperCase() + s.substring(1);
+  }
 
+  /**
+   * 首字母小写
+   * @param s 源字符串
+   * @return
+   */
+  public static String firstCharToLowerCase(String s) {
+    return s.substring(0, 1).toUpperCase() + s.substring(1);
+  }
 }

@@ -9,4 +9,4 @@
  * @author xuyq - chainisit@126.com
  * @since 1.0 - 2016年7月15日
  */
-package com.yunmel.syncretic.iterfac;
+package com.yunmel.syncretic.interface_;

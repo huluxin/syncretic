@@ -24,12 +24,12 @@ import com.yunmel.syncretic.utils.jse.Reflections;
 /**
  * 
  * @description 集合工具类
- *
+ *   - 参照jeesite.
  * @author xuyq - chainisit@126.com
  * @since 1.0 - 2016年7月15日
  */
 @SuppressWarnings("rawtypes")
-public class CollectionsUtils{
+public class CollectionsUtils {
 
   /**
    * 提取集合中的对象的两个属性(通过Getter函数), 组合成Map.
@@ -193,8 +193,7 @@ public class CollectionsUtils{
    * @return
    */
   public static <E> List<E> copyTo(List<?> source, Class<E> destinationClass) {
-    if (source.size() == 0)
-      return Collections.emptyList();
+    if (source.size() == 0) return Collections.emptyList();
     List<E> res = new ArrayList<E>();
     try {
       for (Object o : source) {

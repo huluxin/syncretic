@@ -17,10 +17,12 @@ import com.google.common.collect.Maps;
  * @since 1.0 - 2016年7月15日
  */
 public class ThreadLocalUtils {
+  @SuppressWarnings("rawtypes")
   private static final ThreadLocal SESSION_MAP = new ThreadLocal();
 
   protected ThreadLocalUtils() {}
 
+  @SuppressWarnings("rawtypes")
   public static Object get(String attribute) {
     Map map = (Map) SESSION_MAP.get();
     if (null != map) {
@@ -29,18 +31,18 @@ public class ThreadLocalUtils {
     return null;
   }
 
+  @SuppressWarnings("unchecked")
   public static <T> T get(String attribute, Class<T> clazz) {
     return (T) get(attribute);
   }
 
+  @SuppressWarnings("unchecked")
   public static void set(String attribute, Object value) {
     Map<String, Object> map = (Map<String, Object>) SESSION_MAP.get();
-
     if (map == null) {
       map = Maps.newHashMap();
       SESSION_MAP.set(map);
     }
-
     map.put(attribute, value);
   }
 
